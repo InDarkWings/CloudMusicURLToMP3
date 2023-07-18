@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>网易云音乐分享链接转换器</title>
+  <style>
+    body {
+      background: url(background.jpg) no-repeat fixed center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    input[type="text"] {
+      width: 400px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 2px solid #808080;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #292828;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+   h1
+    {
+        color: #9c4e4e;
+    }
+    input[type="text"]:hover, button:hover {
+      opacity: 0.8;
+    }
+  </style>
+  <script>
+    function convertLink() {
+      var inputLink = document.getElementById("inputLink").value;
+      var regex = /\/song\?id=(\d+)/;
+      var match = regex.exec(inputLink);
+      if (match) {
+        var songId = match[1];
+        var outputLink = "http://music.163.com/song/media/outer/url?id=" + songId + ".mp3";
+        document.getElementById("outputLink").value = outputLink;
+      } else {
+        document.getElementById("outputLink").value = "输入的链接格式不正确或未输入";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>网易云音乐分享链接转换器</h1>
+    <input type="text" id="inputLink" placeholder="这里粘贴复制到的分享链接https://music.163.com/song?id=xxxxx&userid=zzzz">
+    <br>
+    <button onclick="convertLink()">转换</button>
+    <p>外放链接：</p>
+    <input type="text" id="outputLink" readonly>
+  </div>
+</body>
+</html>
