@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.indarkwings.now.cc/sitemap.xml

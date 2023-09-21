@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>网易云音乐分享链接转换器</title>
+  <title>网易云音乐分享链接转换器，简单易用的外放链接生成系统</title>
   <meta charset="UTF-8">
   <meta name="description" content="简单易用的网易云外放链接转换器，轻松把网易云分享链接转换成.mp3 的链接">
-  <meta name="keywords" content="网易云,转换器,分享链接,外放链接,外链,MP3外链,mp3播放链接">
+  <meta name="keywords" content="分享链接,外放链接,mp3播放链接">
   <meta name="author" content="InDarkWings">
   <!-- <meta name="viewport" content="initial-scale=5.0"> -->
   <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=0">
@@ -59,6 +59,18 @@
       opacity: 0.8;
     }
   </style>
+  <link rel="icon" href="https://indarkwings.now.cc/favicon.ico">
+  <!-- 结构化数据标识 -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "播放外链转换器To_Mp3",
+      "url": "https://indarkwings.now.cc/",
+      "logo": "https://indarkwings.now.cc/logo1.png"
+    }
+    </script>
+     <!-- 结构化数据标识 -->
   <script>
     function convertLink() {
       var inputLink = document.getElementById("inputLink").value;
@@ -77,7 +89,9 @@
 <body>
   <div class="container">
     <h1>网易云音乐分享链接转换器</h1>
-    <input type="text" id="inputLink" placeholder="这里粘贴复制到的分享链接https://music.163.com/song?id=xxxxx&userid=zzzz">
+    <h3>如何使用本工具？</h3>
+    <h4>很简单，去复制一个网易云分享链接，然后贴在下面即可</h4>
+    <input type="text" id="inputLink" placeholder="把复制好的分享链接粘贴在这里，然后点击下面的按钮完成转换">
     <br>
     <button onclick="convertLink()">转换</button>
     <p>外放链接：</p>
