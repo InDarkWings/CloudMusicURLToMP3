@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>网易云音乐分享链接转换器，简单易用的外放链接生成系统</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="简单易用的网易云外放链接转换器，轻松把网易云分享链接转换成.mp3 的外链">
+  <meta name="keywords" content="网易云音乐分享链接转换器,网易云外放链接,小工具,分享链接,外链,外放链接,mp3播放链接">
+  <meta name="author" content="InDarkWings">
+  <!-- <meta name="viewport" content="initial-scale=5.0"> -->
+  <meta http-equiv='content-language' content='zh-cn'>
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=0">
+  <meta name="user-scalable" content="yes">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+  <style>
+    body {
+      background: url(background.jpg) no-repeat fixed center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .c1 {
+      text-align: center;
+      margin:10%;
+      
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    input[type="text"] {
+      width: 400px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 2px solid #808080;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #292828;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+   h1
+    {
+        color: #9c4e4e;
+    }
+    input[type="text"]:hover, button:hover {
+      opacity: 0.8;
+    }
+  </style>
+  <link rel="icon" href="https://indarkwings.now.cc/favicon.ico">
+  <!-- 百度验证 -->
+  <meta name="baidu-site-verification" content="codeva-YuxVCkIz5F" />
+  <!-- 百度验证 -->
+  <!-- 结构化数据标识 -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "播放外链转换器To_Mp3",
+      "url": "https://indarkwings.now.cc/",
+      "logo": "https://indarkwings.now.cc/logo1.png"
+    }
+    </script>
+     <!-- 结构化数据标识 -->
+  <script>
+    function convertLink() {
+      var inputLink = document.getElementById("inputLink").value;
+      var regex = /\/song\?id=(\d+)/;
+      var match = regex.exec(inputLink);
+      if (match) {
+        var songId = match[1];
+        var outputLink = "http://music.163.com/song/media/outer/url?id=" + songId + ".mp3";
+        document.getElementById("outputLink").value = outputLink;
+      } else {
+        document.getElementById("outputLink").value = "输入的链接格式不正确或未输入";
+      }
+    }
+  </script>
+</head>
+<body>
+  
+<div class="h-100 container-fluid">
+  <nav class="navbar navbar-expand-sm bg-body-secondary">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://indarkwings.now.cc/"> 首页 </a>
+      </li>
+      <li class="nav-link">
+        <a class="link-info" href="https://altcodequery.pages.dev/">字符编码转换器，字符→Altcode</a>
+      </li>
+      <li class="nav-link">
+        <a class="link-success" href="#">空白</a>
+      </li>
+    </ul>
+  </nav>
+
+  <br>
+  <div class=" c1">
+
+    <h1>网易云音乐分享链接转换器</h1>
+    <h3>如何使用本工具？</h3>
+    <h4>很简单，去复制一个网易云分享链接，然后贴在下面即可</h4>
+    <input type="text" id="inputLink" placeholder="把复制好的分享链接粘贴在这里，然后点击下面的按钮完成转换">
+    <br>
+    <button onclick="convertLink()">转换</button>
+    <p>外放链接：</p>
+    <input type="text" id="outputLink" readonly>
+    <h5>后面会把一些自己以前做的小工具做成在线版分享到这个页面</h5>
+    <a href="https://github.com/InDarkWings/CloudMusicURLToMP3">本页面已上传至github</a>
+    
+   </div>
+
+</div>
+  
+</body>
+</html>
